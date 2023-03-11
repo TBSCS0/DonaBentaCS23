@@ -41,7 +41,7 @@ public class LoginScreen {
         signBtn.setOnAction(e->{
             if(userController.read(userField.getText(),pswField.getText())){
                 System.out.println("Welcome!");
-                home = new Home(userField.getText());
+                home = new Home(userField.getText(), primaryStage);
                 primaryStage.setScene(home.getScene());
             }
         });

@@ -8,6 +8,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 public class Home {
     private Scene scene;
@@ -20,15 +21,16 @@ public class Home {
     private TableView table;
     private UserController userController;
     private ProductController productController;
+    private CreateProduct createProduct;
 
 
-    public Home(String activeUser){
+    public Home(String activeUser, Stage primaryStage){
         userController = new UserController();
         productController = new ProductController();
-        initComponents(activeUser);
+        initComponents(activeUser, primaryStage);
     }
 
-    public void initComponents(String activeUser){
+    public void initComponents(String activeUser, Stage primaryStage){
         // Create scene elements
         userArea = new Label("Área Usuário");
 
@@ -71,7 +73,8 @@ public class Home {
 
         createProductBtn = new Button("Registrar Produto");
         createProductBtn.setOnAction(e->{
-
+            createProduct = new CreateProduct(activeUser);
+            primaryStage.setScene(createProduct.getScene());
         });
 
         updateProductBtn = new Button("Atualizar Produto");
