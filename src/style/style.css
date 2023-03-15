@@ -1,0 +1,5 @@
+#mainbox{
+    -fx-background-color: red;
+    -fx-padding: 20 20 20 20;
+    -fx-spacing: 20;
+}

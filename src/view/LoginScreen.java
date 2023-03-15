@@ -29,7 +29,7 @@ public class LoginScreen {
 
     public void initComponents(Stage primaryStage){
         title = new Label();
-        title.setText("Bem vindo à Loja da Dona Benta");
+        title.setText("Dona Benta");
 
         userField = new TextField();
         userField.setPromptText("Usuário");
@@ -53,8 +53,10 @@ public class LoginScreen {
 
         box = new VBox();
         box.getChildren().addAll(title, userField, pswField, signBtn, signupBtn);
+        box.setId("mainbox");
 
         scene = new Scene(box);
+        scene.getStylesheets().add("./style/style.css");
     }
 
     public Scene getScene(){
